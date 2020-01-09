@@ -1,6 +1,6 @@
 <?php 
 //新订单提醒发送到Telegram
-add_action( 'woocommerce_new_order', 'wt_send_to_telegram',  1, 1  );
+add_action( 'woocommerce_order_status_completed', 'wt_send_to_telegram',  1, 1  );
 function wt_send_to_telegram( $order_id ) {
   $order = wc_get_order( $order_id );
   $items = $order->get_items();
